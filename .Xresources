@@ -40,11 +40,5 @@
 URxvt.scrollBar: false
 URxvt.font: xft:monospace:size=10
 
-!! Copy Paste & Other Extensions
-URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select
-URxvt.keysym.M-c: perl:clipboard:copy
-URxvt.keysym.M-v: perl:clipboard:paste
-URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
-URxvt.urlLauncher: firefox
-URxvt.underlineURLs: true
-URxvt.urlButton: 1
+URxvt.iso14755: false
+URxvt.iso14755_52: false
