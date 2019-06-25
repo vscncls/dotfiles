@@ -98,16 +98,16 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1. "
-set $ws2 "2. "
-set $ws3 "3. "
-set $ws4 "4."
-set $ws5 "5."
-set $ws6 "6."
-set $ws7 "7."
-set $ws8 "8."
-set $ws9 "9. "
-set $ws10 "10. "
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -169,10 +169,10 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-	position top
-	status_command i3blocks
-}
+#bar {
+#	status_command --no-startup-id i3blocks
+#}
+exec_always --no-startup-id /home/lucas/.config/polybar/launch.sh
 
 # Workspace assignments
 assign [class="Spotify"] $ws10
@@ -186,6 +186,8 @@ exec --no-startup-id pamac-tray
 exec --no-startup-id pulseaudio
 exec firefox
 exec spotify
+exec --no-startup-id wal -i ~/Downloads/870874.jpg
+
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
@@ -204,3 +206,15 @@ bindsym XF86AudioPrev exec playerctl previous
 # Screenlock
 bindsym $mod+l exec betterlockscreen -l blur
 bindsym $mod+Shift+l exec betterlockscreen -s blur
+
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color2 #f0f0f0
+
+# class                 border  backgr. text indicator child_border
+client.focused          $bg     $bg     $fg  $bg       $bg
+client.focused_inactive $bg     $bg     $fg  $bg       $bg
+client.unfocused        $bg     $bg     $fg  $bg       $bg
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
+
+client.background       $bg
