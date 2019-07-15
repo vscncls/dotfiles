@@ -12,10 +12,10 @@
 set $mod Mod4
 
 # i3-gaps setup
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 1
 gaps inner 5
-gaps outer 5
-# smart_gaps on
+gaps outer 3
+smart_gaps on
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -34,8 +34,7 @@ font pango:System San Fransisco Display 10,Font Awesome 5 Free 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
-
+bindsym $mod+Return exec st
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -138,7 +137,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'End X session?' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -172,21 +171,12 @@ bindsym $mod+r mode "resize"
 #bar {
 #	status_command --no-startup-id i3blocks
 #}
-exec_always --no-startup-id /home/lucas/.config/polybar/launch.sh
-
-# Workspace assignments
-assign [class="Spotify"] $ws10
-for_window [class="Spotify"] move to workspace $ws10
-assign [class="Firefox"] $ws2
-
+exec_always /home/lucas/.config/polybar/launch.sh
 exec --no-startup-id compton
-exec --no-startup-id feh --bg-scale ~/Downloads/870874.jpg
 exec --no-startup-id nm-applet
-exec --no-startup-id pamac-tray
+exec --no-startup-id blueman-applet
 exec --no-startup-id pulseaudio
-exec firefox
-exec spotify
-exec --no-startup-id wal -i ~/Downloads/870874.jpg
+exec --no-startup-id wal -i ~/Downloads/wallpaper0.jpg
 
 
 # Pulse Audio controls
@@ -195,8 +185,8 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec light -A 10
+bindsym XF86MonBrightnessDown exec light -U 10
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -206,6 +196,13 @@ bindsym XF86AudioPrev exec playerctl previous
 # Screenlock
 bindsym $mod+l exec betterlockscreen -l blur
 bindsym $mod+Shift+l exec betterlockscreen -s blur
+
+# Printscreen
+bindsym Print exec flameshot gui
+
+# move output to <direction>
+bindsym $mod+Shift+m+Right move workspace to output right
+bindsym $mod+Shift+m+Left move workspace to output left
 
 set_from_resource $fg i3wm.color7 #f0f0f0
 set_from_resource $bg i3wm.color2 #f0f0f0
