@@ -49,6 +49,6 @@ set smartindent
 
 let mapleader = "\<space>"
 nnoremap <leader>; A;<esc>
-nnoremap <C-o> :NERDTree<cr>
+nnoremap <C-o> :NERDTreeToggle<cr>
 nnoremap <C-t><left> :tabl<cr>
 nnoremap <C-t><right> :tabr<cr>
