@@ -1,7 +1,9 @@
 call plug#begin()
+Plug 'arcticicestudio/nord-vim'
+Plug 'dracula/vim'
 Plug 'morhetz/gruvbox'
 Plug 'terryma/vim-multiple-cursors'
-Plug '/sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 Plug 'jiangmiao/auto-pairs'
 Plug 'w0rp/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -49,6 +51,8 @@ set smartindent
 
 let mapleader = "\<space>"
 nnoremap <leader>; A;<esc>
+nnoremap <leader>s :w<cr>
+nnoremap <leader>q :q<cr>
 nnoremap <C-o> :NERDTreeToggle<cr>
 nnoremap <C-t><left> :tabl<cr>
 nnoremap <C-t><right> :tabr<cr>
