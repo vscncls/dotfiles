@@ -1,0 +1,7 @@
+set page-padding 2
+map u scroll half-up
+map d scroll hald-down
+map r reload
+map P print
+map i recolor
+map D toggle_page_mode
