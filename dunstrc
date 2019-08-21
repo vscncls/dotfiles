@@ -1,0 +1,29 @@
+[global]
+alignment = center
+follow = keyboard
+frame_width = 1
+geometry = 150x0-5+5
+padding = 5
+font = FiraSans 12
+separator_color = "#383838"
+frame_color = "#383838"
+word_wrap = true
+
+[shortcuts]
+close = ctrl+space
+close_all = ctrl+shift+space
+
+[urgency_low]
+background = "#282828"
+foreground = "#149cdc"
+timeout = 5
+
+[urgency_normal]
+background = "#282828"
+foreground = "#1079aa"
+timeout = 10
+
+[urgency_critical]
+background = "#282828"
+foreground = "#e9cbbd"
+timeout = 0
