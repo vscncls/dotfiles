@@ -1,11 +1,14 @@
 # my dotfiles
-* note that i made some changes to most modules so the correct icons were displayed
-# what i am using
-* pywal
-* st (luke-st-git)
+## what i am using
 * ranger
-* i3-gaps
-* fontawesome
+* bspwm
 * rofi
 * betterlockscreen
 * feh
+* dunst
+* nvim
+* fish
+* termite
+* polybar
+
+and some other stuff, i guess
