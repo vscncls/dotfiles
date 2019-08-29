@@ -1,0 +1,52 @@
+super + Return
+	termite -e fish
+
+super + Escape
+	betterlockscreen -l blur
+
+super + shift + Escape
+	betterlockscreen -s blur
+
+super + shift + d
+	rofi -show drun -theme Arc-Dark -font "DejaVu 12" -show-icons
+
+super + shift + c
+	pkill -USR1 -x sxhkd
+
+super + shift + e
+	bspc quit
+
+super + {_,shift +} q
+	bspc node -{c,k}
+
+super + m
+	bspc desktop -l next
+
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+# expand a window by moving one of its side outward
+super + alt + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# contract a window by moving one of its side inward
+super + alt + shift + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+XF86MonBrightnessUp
+	xbacklight -inc 5
+
+XF86MonBrightnessDown
+	xbacklight -dec 5
+
+XF86AudioLowerVolume
+	pactl -- set-sink-volume 0 -10%
+
+XF86AudioRaiseVolume
+	pactl -- set-sink-volume 0 +10%
+
+XF86AudioMute
+	pactl set-sink-mute 0 toggle
