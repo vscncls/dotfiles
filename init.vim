@@ -11,7 +11,6 @@ Plug 'ayu-theme/ayu-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
 call plug#end()
-set termguicolors     " enable true colors support
 "let ayucolor="light"  " for light version of theme
 "let ayucolor="mirage" " for mirage version of theme
 let ayucolor="dark"   " for dark version of theme
@@ -44,10 +43,11 @@ let NERDTreeWinSize=25
 set number
 set hidden
 set relativenumber
-set mouse=a
 set inccommand=split
 set autoindent
 set smartindent
+set clipboard=unnamedplus
+set termguicolors     " enable true colors support
 
 let mapleader = "\<space>"
 nnoremap <leader>; A;<esc>
@@ -56,3 +56,6 @@ nnoremap <leader>q :q<cr>
 nnoremap <C-o> :NERDTreeToggle<cr>
 nnoremap <C-t><left> :tabl<cr>
 nnoremap <C-t><right> :tabr<cr>
+nnoremap <silent> <leader>o :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
+nnoremap <silent> <leader>O :<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>
+nnoremap <silent> <leader>O :<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>
