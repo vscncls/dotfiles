@@ -50,3 +50,6 @@ XF86AudioRaiseVolume
 
 XF86AudioMute
 	pactl set-sink-mute 0 toggle
+
+Print
+	xfce4-screenshooter
