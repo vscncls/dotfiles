@@ -8,7 +8,9 @@
 * dunst
 * nvim
 * fish
-* termite
+* [st](https://github.com/ramenbroth/st)
 * polybar
+* tmux
 
 and some other stuff, i guess
+
