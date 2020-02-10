@@ -7,7 +7,7 @@
 * feh
 * dunst
 * nvim
-* fish
+* zsh
 * [st](https://github.com/ramenbroth/st)
 * polybar
 * tmux
