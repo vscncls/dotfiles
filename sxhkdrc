@@ -1,5 +1,5 @@
 super + Return
-	st -e fish
+	st -e zsh
 
 super + Escape
 	betterlockscreen -l blur
