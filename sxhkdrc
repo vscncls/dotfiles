@@ -1,5 +1,5 @@
 super + Return
-	termite -e fish
+	st -e fish
 
 super + Escape
 	betterlockscreen -l blur
