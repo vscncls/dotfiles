@@ -7,6 +7,8 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'preservim/nerdcommenter'
 Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-surround'
+Plug 'Chiel92/vim-autoformat'
+Plug 'vim-syntastic/syntastic'
 call plug#end()
 
 let ayucolor="dark"
@@ -28,6 +30,7 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = '☰'
 let g:airline_symbols.maxlinenr = ''
 let g:airline_symbols.dirty='⚡'
+let g:syntastic_check_on_open = 1
 let NERDTreeWinSize=25
 
 set termguicolors
@@ -58,3 +61,4 @@ nnoremap <C-t><right> :tabr<cr>
 nnoremap <silent> <leader>o :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
 nnoremap <silent> <leader>O :<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>
 
+au BufWrite * :Autoformat
