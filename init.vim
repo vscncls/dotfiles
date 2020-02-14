@@ -9,6 +9,8 @@ Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-surround'
 Plug 'Chiel92/vim-autoformat'
 Plug 'vim-syntastic/syntastic'
+Plug 'mattn/emmet-vim'
+Plug 'neoclide/coc.nvim'
 call plug#end()
 
 let ayucolor="dark"
@@ -31,6 +33,7 @@ let g:airline_symbols.linenr = '☰'
 let g:airline_symbols.maxlinenr = ''
 let g:airline_symbols.dirty='⚡'
 let g:syntastic_check_on_open = 1
+let g:user_emmet_install_global = 0
 let NERDTreeWinSize=25
 
 set termguicolors
@@ -56,9 +59,8 @@ nnoremap <leader>; A;<esc>
 nnoremap <leader>s :w<cr>
 nnoremap <leader>q :q<cr>
 nnoremap <C-o> :NERDTreeToggle<cr>
-nnoremap <C-t><left> :tabl<cr>
-nnoremap <C-t><right> :tabr<cr>
 nnoremap <silent> <leader>o :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
 nnoremap <silent> <leader>O :<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>
 
 au BufWrite * :Autoformat
+autocmd FileType html,css,zpt EmmetInstall
