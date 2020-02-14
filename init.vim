@@ -10,7 +10,6 @@ Plug 'tpope/vim-surround'
 Plug 'Chiel92/vim-autoformat'
 Plug 'vim-syntastic/syntastic'
 Plug 'mattn/emmet-vim'
-Plug 'neoclide/coc.nvim'
 call plug#end()
 
 let ayucolor="dark"
