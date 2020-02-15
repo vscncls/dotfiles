@@ -8,7 +8,7 @@
 * dunst
 * nvim
 * zsh
-* [st](https://github.com/ramenbroth/st)
+* [st](https://github.com/vscncls/st)
 * polybar
 * tmux
 
