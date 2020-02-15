@@ -10,6 +10,7 @@ Plug 'tpope/vim-surround'
 Plug 'Chiel92/vim-autoformat'
 Plug 'vim-syntastic/syntastic'
 Plug 'mattn/emmet-vim'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 let ayucolor="dark"
@@ -63,3 +64,9 @@ nnoremap <silent> <leader>O :<C-u>call append(line(".")-1, repeat([""], v:count1
 
 au BufWrite * :Autoformat
 autocmd FileType html,css,zpt EmmetInstall
+
+function! GitStatus()
+    let [a,m,r] = GitGutterGetHunkSummary()
+    return printf('+%d ~%d -%d', a, m, r)
+endfunction
+set statusline+=%{GitStatus()}
