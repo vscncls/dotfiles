@@ -55,6 +55,7 @@ set cursorline
 set clipboard=unnamedplus
 set splitbelow
 set splitright
+set colorcolumn=80
 
 let mapleader = "\<space>"
 nnoremap <leader>; A;<esc>
