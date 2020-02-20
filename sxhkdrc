@@ -8,7 +8,7 @@ super + shift + Escape
 	betterlockscreen -s blur
 
 super + shift + d
-	rofi -show drun -theme Arc-Dark -font "DejaVu 12" -show-icons
+	rofi -show drun -font "DejaVu 12" -show-icons
 
 super + shift + c
 	pkill -USR1 -x sxhkd
