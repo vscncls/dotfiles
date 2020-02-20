@@ -248,4 +248,5 @@ function! s:denite_my_settings() abort
                 \ denite#do_map('do_action', 'split')
 endfunction
 
-nnoremap <leader>f :<C-u>DeniteCursorWord grep:.<CR>
+nnoremap <leader>F :<C-u>DeniteCursorWord grep:.<CR>
+nnoremap <leader>f :<C-u>Denite grep:.<CR>
