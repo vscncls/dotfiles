@@ -43,3 +43,4 @@ bspc config urgent_border_color     "#dd2727"
 xdo below -t $(xdo id -n root) $(xdo id -a polybar-main_eDP1)
 
 bspc rule -a '*:zathura' state=tiled
+setxkmap -model pc101 -layout br
