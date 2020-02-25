@@ -13,6 +13,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'kien/ctrlp.vim'
 Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tpope/vim-fugitive'
+Plug 'ryanoasis/vim-devicons'
 " ==Themes==
 Plug 'ayu-theme/ayu-vim'
 Plug 'arcticicestudio/nord-vim'
@@ -76,6 +77,11 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-b> :ls<CR>:b<Space>
+nnoremap ; :
+nnoremap <A-l> :vertical resize +5<cr>
+nnoremap <A-h> :vertical resihe -5<cr>
+nnoremap <A-j> :resize -5<cr>
+nnoremap <A-k> :resize +5<cr>
 
 autocmd FileType html,css,zpt EmmetInstall
 
