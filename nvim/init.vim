@@ -1,23 +1,26 @@
 call plug#begin()
-Plug 'jiangmiao/auto-pairs'
-Plug 'vim-airline/vim-airline'
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'preservim/nerdcommenter'
-Plug 'Yggdroot/indentLine'
-Plug 'tpope/vim-surround'
-"Plug 'Chiel92/vim-autoformat'
-Plug 'mattn/emmet-vim'
-Plug 'airblade/vim-gitgutter'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'terryma/vim-multiple-cursors'
-Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'tpope/vim-fugitive'
-Plug 'ryanoasis/vim-devicons'
 " ==Themes==
 Plug 'ayu-theme/ayu-vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
+Plug 'ryanoasis/vim-devicons'
+"==Syntax Highlight==
+Plug 'maxmellon/vim-jsx-pretty'
+"==NERDTree==
+Plug 'scrooloose/nerdtree'
+"==Git==
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+"==General QOL stuff==
+Plug 'vim-airline/vim-airline'
+Plug 'preservim/nerdcommenter'
+Plug 'Yggdroot/indentLine'
+Plug 'tpope/vim-surround'
+Plug 'mattn/emmet-vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'terryma/vim-multiple-cursors'
+Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
 
 let ayucolor="dark"
@@ -111,7 +114,19 @@ endfunction
 
 " Highlight currently open buffer in NERDTree
 autocmd BufEnter * call SyncTree()
+
 "===Coc stuff bellow===
+let g:coc_global_extensions = [
+  \ 'coc-snippets',
+  \ 'coc-pairs',
+  \ 'coc-tsserver',
+  \ 'coc-eslint', 
+  \ 'coc-prettier', 
+  \ 'coc-json', 
+  \ 'coc-python',
+  \ 'coc-phpls',
+  \ ]
+
 set cmdheight=2
 set updatetime=300
 set shortmess+=c
