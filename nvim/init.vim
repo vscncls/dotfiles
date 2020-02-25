@@ -23,6 +23,7 @@ Plug 'mattn/emmet-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'terryma/vim-multiple-cursors'
 Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'tpope/vim-sleuth'
 call plug#end()
 
 let ayucolor="dark"
@@ -59,7 +60,6 @@ set inccommand=split
 set autoindent
 set smartindent
 set expandtab
-set tabstop=4
 set shiftwidth=4
 set smarttab
 set softtabstop=0
