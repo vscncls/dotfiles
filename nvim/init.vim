@@ -2,15 +2,15 @@ call plug#begin()
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'preservim/nerdcommenter'
 Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-surround'
-Plug 'Chiel92/vim-autoformat'
+"Plug 'Chiel92/vim-autoformat'
 Plug 'mattn/emmet-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'terryma/vim-multiple-cursors'
-Plug 'kien/ctrlp.vim'
 Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tpope/vim-fugitive'
 Plug 'ryanoasis/vim-devicons'
@@ -42,6 +42,7 @@ let g:airline_symbols.dirty='⚡'
 let g:syntastic_check_on_open = 1
 let g:user_emmet_install_global = 0
 let NERDTreeWinSize=25
+let g:NERDTreeIgnore = ['pyc$', '^node_modules$']
 
 set termguicolors
 set hidden
@@ -82,6 +83,8 @@ nnoremap <A-l> :vertical resize +5<cr>
 nnoremap <A-h> :vertical resihe -5<cr>
 nnoremap <A-j> :resize -5<cr>
 nnoremap <A-k> :resize +5<cr>
+nmap <C-_> <plug>NERDCommenterToggle
+vmap <C-_> <plug>NERDCommenterToggle
 
 autocmd FileType html,css,zpt EmmetInstall
 
@@ -173,7 +176,7 @@ call denite#custom#var('buffer', 'date_format', '')
 "   highlight_matched_char  - Matched characters highlight
 "   highlight_matched_range - matched range highlight
 let s:denite_options = {'default' : {
-            \ 'split': 'floating',
+            \ 'split': 'botright',
             \ 'start_filter': 1,
             \ 'auto_resize': 1,
             \ 'source_names': 'short',
@@ -258,3 +261,4 @@ endfunction
 
 nnoremap <leader>F :<C-u>DeniteCursorWord grep:.<CR>
 nnoremap <leader>f :<C-u>Denite grep:.<CR>
+nnoremap <C-p> :Denite file<CR>
