@@ -6,6 +6,8 @@ Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'ryanoasis/vim-devicons'
 "==Syntax Highlight==
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'othree/yajs.vim'
+Plug 'HerringtonDarkholme/yats.vim'
 "==NERDTree==
 Plug 'scrooloose/nerdtree'
 "==Git==
