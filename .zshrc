@@ -1,4 +1,5 @@
 export PATH="$(yarn global bin):$PATH"
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/lucas//.oh-my-zsh"
