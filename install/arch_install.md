@@ -62,7 +62,7 @@ mount /dev/sda3 /boot/efi
 pacstrap /mnt base base-devel linux linux-firmware
 genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
-```sh
+```
 
 ## After Chroot
 
