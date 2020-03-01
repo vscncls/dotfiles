@@ -96,11 +96,6 @@ alias ....="cd ../../.."
 alias vim=nvim
 export VISUAL=nvim
 
-rmd () {
-    Rscript -e "rmarkdown::render('$argv', clean=TRUE, output_format='pdf_document')"
-    Rscript -e "rmarkdown::render('$argv', clean=TRUE)"
-}
-
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
