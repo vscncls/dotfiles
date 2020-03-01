@@ -1,83 +1,95 @@
-# Installing arch with an encrypted /home fodler
+# Installing arch with an encrypted /home folder
 
 # Before chroot
 
 * Keyboard layout setup
 
-`loadkeys _key layout_ (ie br-abnt2)`
+`loadkeys key-layout` (ie br-abnt2)
 
 * Interwebs
 
 `ping archlinux.org
 `
+
 `wifi-menu
 `
 * update clock
 
 `timedatectl set-ntp true
 `
+
 * partitioning
 
-`cfdisk
-`
+`cfdisk`
+
 /          Linux 1
+
 /home      Linux 2
+
 /boot/efi  EFI   3
+
 swap       Swap  4
 
-* create filesystems
-
-`mkfs.ext4 /dev/sda1
-``mkfs.ext4 /dev/sda2
-``mkfs.fat -F32 /dev/sda3
-``mkswap /dev/sd4
-`
-`swapon /dev/sd4
-`
 * encrypting
 
-`cryptsetup luksFormat /dev/sda2
-`
-`cryptsetup open /dev/sda2 home
-`
+```sh
+cryptsetup luksFormat /dev/sda2
+cryptsetup open /dev/sda2 home
+```
+* create filesystems
+
+```sh
+mkfs.ext4 /dev/sda1
+mkfs.ext4 /dev/mapper/home
+mkfs.fat -F32 /dev/sda3
+mkswap /dev/sd4
+swapon /dev/sd4
+```
+
 * mounting the filesystems
 
-`mount /dev/sda1 /mnt
-``mkdir /mnt/home
-``mount /dev/mapper/home /mnt/home
-``mkdir -p /boot/efi
-``mount /dev/sda3 /boot/efi
-`
+```sh
+mount /dev/sda1 /mnt
+mkdir /mnt/home
+mount /dev/mapper/home /mnt/home
+mkdir -p /boot/efi
+mount /dev/sda3 /boot/efi
+```
+
 * install
 
-`pacstrap /mnt base base-devel linux linux-firmware
-`
-`genfstab -U /mnt >> /mnt/etc/fstab
-`
-`arch-chroot /mnt
-`
+```sh
+pacstrap /mnt base base-devel linux linux-firmware
+genfstab -U /mnt >> /mnt/etc/fstab
+arch-chroot /mnt
+```sh
+
 ## After Chroot
 
-* setup time zoen
+* setup time zone
 
-`ln -sf /usr/share/zoneinfo/_region_/_city_ /etc/localtime (ie /America/Sao\_Paulo)
-    `
-    `hwclock --systohc
-    `
+```sh
+ln -sf /usr/share/zoneinfo/_region_/_city_ /etc/localtime (ie /America/Sao\_Paulo)
+hwclock --systohc
+```
+
 * Locales
 
-`edit /etc/locale.gen and uncomment en\_US.UTF-8 UTF-8
-`
-`locale-gen
-`
-`echo "LANG=en_US.UTF-8" >> /etc/locale.conf
-    `
-`loadkeys _key layout_ (ie br-abnt2)
-    `
+edit /etc/locale.gen and uncomment en\_US.UTF-8 UTF-8
+
+```sh
+locale-gen
+echo "LANG=en_US.UTF-8" >> /etc/locale.conf
+echo "KEYMAP=\"br-abnt2\"" >> /etc/vconsole.conf
+echo "LANG=en_US.UTF-8"
+```
+
 * hostname
 
-`echo "_hostname_" > /etc/hostname
-`
+```sh
+echo "_hostname_" > /etc/hostname
+```
+
 * Network
 
 Add these lines to /etc/hosts
@@ -87,55 +99,81 @@ Add these lines to /etc/hosts
 ::1		    localhost
 ```
 
-`pacman -S networkmanager network-manager-applet
-`
+```sh
+pacman -S networkmanager network-manager-applet
+systemctl enable NetworkManager
+```
 
-`systemctl enable NetworkManager`
-
-* create a new initramfs
-
-`mkinitcpio -P
-`
 * Users
 
 set your password with passwd
 
-`useradd -m -G wheel _name_
-`
-`pacman -S vim
-`
-`visudo`
+```sh
+useradd -m -G wheel _name_
+passwd _name_
+passwd root
+pacman -S vim
+visudo
+```
 
 create a line with `name ALL=(ALL) ALL`
 
-`passwd name`
+* pacman
+
+edit /etc/pacman.conf and include multilib and enable colors
+
+`pacman -Sy`
 
 * bootloader
 
+edit cryptab and include the incripted partition (run blkid to get the partition uuid                                                                                 )
+
 <!--TODO: try out refind (https://github.com/bobafetthotmail/refind-theme-regular)-->
+create a new initramfs
 
-`pacman -S grub efibootmgr`
-
-`grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB`
-
-`grub-mkconfig -o /boot/grub/grub.cfg`
-
-REBOOT
+```sh
+mkinitcpio -P
+pacman -S grub efibootmgr
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
+grub-mkconfig -o /boot/grub/grub.cfg
+exit
+reboot
+```
 
 ## Post install
 
+* Connecting wifi
+```sh
+nmcli dev wifi
+nmcli dev wifi connect ESSID_NAME password ESSID_PASSWORD
+```
+
 install the needed graphics driver
 
-`pacman -S --needed - < packages.txt`
-
-`git clone https://github.com/vscncls/dotfiles`
+```sh
+sudo pacman -S git
+git clone https://github.com/vscncls/dotfiles
+pacman -S --needed - < packages.txt
+systemctl enable --now ufw.service
+sudo ufw default deny
+sudo ufw allow from 192.168.0.0/24
+sudo ufw allow Deluge
+sudo ufw limit ssh
+sudo ufw enable
+```
 
 copy config files
 
-add this to the .xinitrc
-
+```sh
+echo "setxkbmap -model pc101 -layout br & exec bspwm" > ~/.xinitrc
 ```
-exec bspwm
+
+* Install a terminal emulator
+
+```bash
+git clone https://github.com/vscncls/st`
+cd st
+sudo make clean install
 ```
 
 * aur packages
@@ -144,11 +182,9 @@ exec bspwm
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
+yay -S polybar betterlockscreen compton-tryone-git omnidb-app spotify nerd-fonts-fira-code
+exec startx
 ```
-
-`yay -S polybar betterlockscreen compton-tryone-git omnidb-app spotify`
-
-`exec startx`
 
 * install vim plug
 
