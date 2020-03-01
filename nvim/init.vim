@@ -19,7 +19,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'preservim/nerdcommenter'
 Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-surround'
-Plug 'mattn/emmet-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'terryma/vim-multiple-cursors'
 Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -85,7 +84,7 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <C-b> :ls<CR>:b<Space>
 nnoremap ; :
 nnoremap <A-l> :vertical resize +5<cr>
-nnoremap <A-h> :vertical resihe -5<cr>
+nnoremap <A-h> :vertical resize -5<cr>
 nnoremap <A-j> :resize -5<cr>
 nnoremap <A-k> :resize +5<cr>
 nmap <C-_> <plug>NERDCommenterToggle
@@ -127,6 +126,7 @@ let g:coc_global_extensions = [
   \ 'coc-json', 
   \ 'coc-python',
   \ 'coc-phpls',
+  \ 'coc-emmet',
   \ ]
 
 set cmdheight=2
