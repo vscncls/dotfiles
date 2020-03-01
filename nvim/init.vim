@@ -25,8 +25,7 @@ Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tpope/vim-sleuth'
 call plug#end()
 
-let ayucolor="dark"
-colorscheme ayu
+colorscheme onehalfdark
 
 let g:deoplete#enable_at_startup = 1
 let g:airline#extensions#tabline#enabled = 1
