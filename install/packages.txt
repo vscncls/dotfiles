@@ -33,7 +33,10 @@ curl
 wget
 adobe-source-han-sans-jp-fonts
 noto-fonts
+noto-emoji
+gnu-free-fonts
 ttf-fira-code
+ttf-ubuntu-font-family
 man-db
 man-pages
 texinfo
