@@ -8,7 +8,9 @@ pasystray &
 nm-applet &
 feh --bg-fill /home/lucas/Images/wallpaper.jpg &
 
-bspc monitor -d 1 2 3 4 5 6 7 8 9
+# might have to adjust these values according to current setup, will add a script to handle that int the future
+# TODO
+bspc monitor eDP1 -d 1 2 3 4 5 6 7 8 9
 
 bspc config border_width         2
 bspc config window_gap           2
