@@ -130,3 +130,7 @@ zle -N zle-line-init
 echo -ne '\e[5 q'
 # Use beam shape cursor for each new prompt.
 preexec() { echo -ne '\e[5 q' ;}
+
+. $HOME/.asdf/asdf.sh
+
+eval $(ssh-agent -s) > /dev/null
