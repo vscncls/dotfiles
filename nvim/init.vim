@@ -72,7 +72,7 @@ let mapleader = "\<space>"
 nnoremap <leader>; A;<esc>
 nnoremap <leader>s :w<cr>
 nnoremap <leader>q :q<cr>
-nnoremap <C-o> :NERDTreeToggle<cr>
+nnoremap <leader>n :NERDTreeToggle<cr>
 nnoremap <silent> <leader>o :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
 nnoremap <silent> <leader>O :<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>
 " Move between splits
