@@ -70,3 +70,5 @@ Print
 super + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
+super + b
+    [ $(bspc config border_width) = 2 ] && bspc config border_width 0 || bspc config border_width 2
