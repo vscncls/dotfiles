@@ -47,9 +47,6 @@ format-offset =
 background = #292d3e
 foreground = #c0c5ce
 alert = #bd2c40
-volume-min = #a3be8c
-volume-med = #ebcb8b
-volume-max = #bf616a
 
 
 [bar/sidebar-bspwm]
@@ -96,6 +93,8 @@ separator = " "
 
 background = ${colors.background}
 foreground = ${colors.foreground}
+
+line-size = 2
 
 wm-restack = bspwm
 override-redirect = true
