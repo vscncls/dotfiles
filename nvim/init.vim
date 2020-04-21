@@ -8,6 +8,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'othree/yajs.vim'
 Plug 'HerringtonDarkholme/yats.vim'
+Plug 'styled-components/vim-styled-components'
 "==NERDTree==
 Plug 'scrooloose/nerdtree'
 "==Git==
@@ -17,15 +18,17 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 "==General QOL stuff==
 Plug 'vim-airline/vim-airline'
 Plug 'preservim/nerdcommenter'
-Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-surround'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'terryma/vim-multiple-cursors'
 Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tpope/vim-sleuth'
+Plug 'schickling/vim-bufonly'
+Plug 'APZelos/blamer.nvim'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
-colorscheme onehalfdark
+colorscheme nord
 
 let g:deoplete#enable_at_startup = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -46,7 +49,9 @@ let g:airline_symbols.dirty='⚡'
 let g:syntastic_check_on_open = 1
 let g:user_emmet_install_global = 0
 let NERDTreeWinSize=25
-let g:NERDTreeIgnore = ['pyc$', '^node_modules$']
+let g:NERDTreeIgnore = ['pyc$', '^node_modules$', '^.git$']
+let NERDTreeShowHidden=1
+let g:indentLine_setConceal = 0
 
 set termguicolors
 set hidden
@@ -67,12 +72,14 @@ set clipboard=unnamedplus
 set splitbelow
 set splitright
 set colorcolumn=80
+set conceallevel=0
 
 let mapleader = "\<space>"
 nnoremap <leader>; A;<esc>
 nnoremap <leader>s :w<cr>
 nnoremap <leader>q :q<cr>
 nnoremap <leader>n :NERDTreeToggle<cr>
+nnoremap <leader>m :NERDTreeFind<cr>
 nnoremap <silent> <leader>o :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
 nnoremap <silent> <leader>O :<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>
 " Move between splits
@@ -88,8 +95,7 @@ nnoremap <A-j> :resize -5<cr>
 nnoremap <A-k> :resize +5<cr>
 nmap <C-_> <plug>NERDCommenterToggle
 vmap <C-_> <plug>NERDCommenterToggle
-
-autocmd FileType html,css,zpt EmmetInstall
+nnoremap <leader>t :split<cr>:term zsh<cr>
 
 function! GitStatus()
     let [a,m,r] = GitGutterGetHunkSummary()
@@ -113,12 +119,11 @@ function SyncTree()
 endfunction
 
 " Highlight currently open buffer in NERDTree
-autocmd BufEnter * call SyncTree()
+" autocmd BufEnter * call SyncTree()
 
 "===Coc stuff bellow===
 let g:coc_global_extensions = [
   \ 'coc-snippets',
-  \ 'coc-pairs',
   \ 'coc-tsserver',
   \ 'coc-eslint', 
   \ 'coc-prettier', 
@@ -126,6 +131,7 @@ let g:coc_global_extensions = [
   \ 'coc-python',
   \ 'coc-phpls',
   \ 'coc-emmet',
+  \ 'coc-inline-jest'
   \ ]
 
 set cmdheight=2

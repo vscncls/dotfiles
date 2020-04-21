@@ -1,4 +1,3 @@
-#https://github.com/lokesh-krishna/dotfiles/blob/master/nord-v2/config/dunst/dunstrc
 [global]
     ### Display ###
 
@@ -16,7 +15,7 @@
     #
     # If this option is set to mouse or keyboard, the monitor option
     # will be ignored.
-    follow = mouse
+    # follow = mouse
 
     # The geometry of the window:
     #   [{width}]x{height}[+/-{x}+/-{y}]
@@ -160,7 +159,7 @@
     max_icon_size = 64
 
     # Paths to default icons.
-    icon_folders = /home/loki/.icons/
+    #icon_folders = /usr/share/icons/Papirus-Dark/16x16/actions/dialog-i
 
     ### History ###
 
@@ -292,3 +291,43 @@
 [DND]
 	summary = *Do Not Disturb*
 	set_stack_tag = "dnd"
+
+#[espeak]
+#    summary = "*"
+#    script = dunst_espeak.sh
+
+#[script-test]
+#    summary = "*script*"
+#    script = dunst_test.sh
+
+#[ignore]
+#    # This notification will not be displayed
+#    summary = "foobar"
+#    format = ""
+
+#[history-ignore]
+#    # This notification will not be saved in history
+#    summary = "foobar"
+#    history_ignore = yes
+
+#[signed_on]
+#    appname = Pidgin
+#    summary = "*signed on*"
+#    urgency = low
+#
+#[signed_off]
+#    appname = Pidgin
+#    summary = *signed off*
+#    urgency = low
+#
+#[says]
+#    appname = Pidgin
+#    summary = *says*
+#    urgency = critical
+#
+#[twitter]
+#    appname = Pidgin
+#    summary = *twitter.com*
+#    urgency = normal
+#
+# vim: ft=cfg

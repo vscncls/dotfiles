@@ -43,13 +43,13 @@ XF86MonBrightnessDown
 	xbacklight -dec 5
 
 XF86AudioLowerVolume
-	bash -c "pactl -- set-sink-volume $(pactl -- list sinks short | grep RUNNING | awk '\{print $1\}') -10%"
+	pactl -- set-sink-volume $(pactl -- list sinks short | grep RUNNING | awk '\{print $1\}') -10% && notify-send -i /usr/share/icons/Papirus-Dark/16x16/actions/audio-volume-low.svg "$(pamixer --get-volume-human)"
 
 XF86AudioRaiseVolume
-	pactl -- set-sink-volume $(pactl -- list sinks short | grep RUNNING | awk '\{print $1\}') +10%
+	pactl -- set-sink-volume $(pactl -- list sinks short | grep RUNNING | awk '\{print $1\}') +10% && notify-send -i /usr/share/icons/Papirus-Dark/16x16/actions/audio-volume-high.svg "$(pamixer --get-volume-human)"
 
 XF86AudioMute
-	pactl set-sink-mute $(pactl -- list sinks short | grep RUNNING | awk '\{print $1\}') toggle
+	pactl set-sink-mute $(pactl -- list sinks short | grep RUNNING | awk '\{print $1\}') toggle && notify-send -i /usr/share/icons/Papirus-Dark/16x16/actions/audio-volume-$([ $(pamixer --get-volume-human) = "muted" ] && echo muted || echo high).svg "$(pamixer --get-volume-human)"
 
 XF86AudioPlay
     dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause

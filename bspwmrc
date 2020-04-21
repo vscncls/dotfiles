@@ -42,3 +42,4 @@ bspc config presel_feedback_color   "#5e81ac"
 bspc config urgent_border_color     "#dd2727"
 
 bspc rule -a '*:zathura' state=tiled
+bspc rule -a firefoxdeveloperedition:Toolkit sticky=on state=floating
