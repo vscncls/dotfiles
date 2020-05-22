@@ -4,28 +4,30 @@ Plug 'ayu-theme/ayu-vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'ryanoasis/vim-devicons'
+Plug 'morhetz/gruvbox'
 "==Syntax Highlight==
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'othree/yajs.vim'
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'styled-components/vim-styled-components'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 "==NERDTree==
 Plug 'scrooloose/nerdtree'
 "==Git==
-Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 "==General QOL stuff==
 Plug 'vim-airline/vim-airline'
-Plug 'preservim/nerdcommenter'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'terryma/vim-multiple-cursors'
 Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'tpope/vim-sleuth'
-Plug 'schickling/vim-bufonly'
 Plug 'APZelos/blamer.nvim'
 Plug 'jiangmiao/auto-pairs'
+
+"Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
 
 colorscheme nord
@@ -82,44 +84,29 @@ nnoremap <leader>n :NERDTreeToggle<cr>
 nnoremap <leader>m :NERDTreeFind<cr>
 nnoremap <silent> <leader>o :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
 nnoremap <silent> <leader>O :<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>
+nmap <leader>gs :G<CR>
+
 " Move between splits
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
 nnoremap <C-b> :ls<CR>:b<Space>
 nnoremap ; :
 nnoremap <A-l> :vertical resize +5<cr>
 nnoremap <A-h> :vertical resize -5<cr>
 nnoremap <A-j> :resize -5<cr>
 nnoremap <A-k> :resize +5<cr>
-nmap <C-_> <plug>NERDCommenterToggle
-vmap <C-_> <plug>NERDCommenterToggle
-nnoremap <leader>t :split<cr>:term zsh<cr>
+nmap <C-_> gcc
+vmap <C-_> gc
+nnoremap <leader>t :split<cr>:term fish<cr>
 
 function! GitStatus()
     let [a,m,r] = GitGutterGetHunkSummary()
     return printf('+%d ~%d -%d', a, m, r)
 endfunction
 set statusline+=%{GitStatus()}
-
-" sync open file with NERDTree
-" " Check if NERDTree is open or active
-function! IsNERDTreeOpen()        
-  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
-endfunction
-
-" Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
-" file, and we're not in vimdiff
-function SyncTree()
-  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff && stridx(expand('%:t'), 'NERD_tree') == -1
-    NERDTreeFind
-    wincmd p
-  endif
-endfunction
-
-" Highlight currently open buffer in NERDTree
-" autocmd BufEnter * call SyncTree()
 
 "===Coc stuff bellow===
 let g:coc_global_extensions = [
