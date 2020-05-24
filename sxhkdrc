@@ -1,55 +1,54 @@
 super + Return
-	st -e zsh
+    st -e fish
 
 super + Escape
-	betterlockscreen -l blur
+    betterlockscreen -l blur
 
 super + shift + Escape
-	betterlockscreen -s blur
+    betterlockscreen -s blur
 
 super + shift + d
-	rofi -show drun -font "DejaVu 12" -show-icons
+    rofi -show drun -font "DejaVu 12" -show-icons
 
 super + shift + c
-	pkill -USR1 -x sxhkd
+    pkill -USR1 -x sxhkd
 
 super + shift + e
-	bspc quit
+    bspc quit
 
 super + {_,shift +} q
-	bspc node -{c,k}
+    bspc node -{c,k}
 
 super + m
-	bspc desktop -l next
+    bspc desktop -l next
 
 super + {_,shift + }{h,j,k,l}
-	bspc node -{f,s} {west,south,north,east}
+    bspc node -{f,s} {west,south,north,east}
 
 super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
+    bspc {desktop -f,node -d} '^{1-9,10}'
 
 # expand a window by moving one of its side outward
 super + alt + {h,j,k,l}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+    bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 # contract a window by moving one of its side inward
 super + alt + shift + {h,j,k,l}
-	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+    bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
 XF86MonBrightnessUp
-	xbacklight -inc 5
+    xbacklight -inc 5
 
 XF86MonBrightnessDown
-	xbacklight -dec 5
+    xbacklight -dec 5
 
 XF86AudioLowerVolume
-	pactl -- set-sink-volume $(pactl -- list sinks short | grep RUNNING | awk '\{print $1\}') -10% && notify-send -i /usr/share/icons/Papirus-Dark/16x16/actions/audio-volume-low.svg "$(pamixer --get-volume-human)"
-
+    pactl -- set-sink-volume $(pactl -- list sinks short | grep RUNNING | awk '\{print $1\}') -10%
 XF86AudioRaiseVolume
-	pactl -- set-sink-volume $(pactl -- list sinks short | grep RUNNING | awk '\{print $1\}') +10% && notify-send -i /usr/share/icons/Papirus-Dark/16x16/actions/audio-volume-high.svg "$(pamixer --get-volume-human)"
+    pactl -- set-sink-volume $(pactl -- list sinks short | grep RUNNING | awk '\{print $1\}') +10%
 
 XF86AudioMute
-	pactl set-sink-mute $(pactl -- list sinks short | grep RUNNING | awk '\{print $1\}') toggle && notify-send -i /usr/share/icons/Papirus-Dark/16x16/actions/audio-volume-$([ $(pamixer --get-volume-human) = "muted" ] && echo muted || echo high).svg "$(pamixer --get-volume-human)"
+    pactl set-sink-mute $(pactl -- list sinks short | grep RUNNING | awk '\{print $1\}') toggle
 
 XF86AudioPlay
     dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
@@ -64,11 +63,10 @@ XF86AudioStop
     dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop
 
 Print
-	xfce4-screenshooter
+    $HOME/.local/bin/screenshot
 
-# set the window state
 super + {t,shift + t,s,f}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+    bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 super + b
     bspc config border_width $([ $(bspc config border_width) = 0 ] && echo 2 || echo 0 )
