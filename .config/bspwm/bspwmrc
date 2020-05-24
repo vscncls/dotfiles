@@ -1,8 +1,8 @@
-#! /bin/sh
+#!/bin/sh
 sxhkd &
 compton --config $HOME/.config/compton/compton.conf &
 dunst &
-$HOME/.config/bspwm/panel.sh &
+$HOME/.config/polybar/panel.sh &
 pasystray &
 nm-applet &
 $HOME/.fehbg &
