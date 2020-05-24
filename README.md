@@ -1,16 +1,19 @@
 # my dotfiles
+
 ## what i am using
-* ranger
+
 * bspwm
-* rofi
 * betterlockscreen
-* feh
+* nnn
+* rofi (mostly using dmenu mode)
+* sxiv
+* feh (only used to set the background)
 * dunst
 * nvim
-* zsh
+* fish shell
 * [st](https://github.com/vscncls/st)
 * polybar
 * tmux
+* shotgun & hacksaw (really simple screenshot utils)
 
 and some other stuff, i guess
-
