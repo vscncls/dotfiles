@@ -5,3 +5,4 @@ map r reload
 map P print
 map i recolor
 map D toggle_page_mode
+set selection-clipboard clipboard
