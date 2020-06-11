@@ -1,6 +1,6 @@
 {
     "python.formatting.provider": "autopep8",
-    "inlineJest.enabled": true,
+    "explorer.file.showHiddenFiles": true,
     "coc.preferences.formatOnInsertLeave": true,
     "python.linting.flake8Enabled": true,
     "emmet.includeLanguages": {

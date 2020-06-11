@@ -4,33 +4,31 @@ Plug 'ayu-theme/ayu-vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'ryanoasis/vim-devicons'
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
 "==Syntax Highlight==
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'othree/yajs.vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-"==NERDTree==
-Plug 'scrooloose/nerdtree'
 "==Git==
+Plug 'tpope/vim-fugitive'
+Plug 'APZelos/blamer.nvim'
 Plug 'airblade/vim-gitgutter'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 "==General QOL stuff==
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-sleuth'
-Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'terryma/vim-multiple-cursors'
 Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'APZelos/blamer.nvim'
 Plug 'jiangmiao/auto-pairs'
 
 "Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
 
-colorscheme nord
+set background=dark
+colorscheme gruvbox
 
 let g:deoplete#enable_at_startup = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -48,11 +46,6 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = '☰'
 let g:airline_symbols.maxlinenr = ''
 let g:airline_symbols.dirty='⚡'
-let g:syntastic_check_on_open = 1
-let g:user_emmet_install_global = 0
-let NERDTreeWinSize=25
-let g:NERDTreeIgnore = ['pyc$', '^node_modules$', '^.git$']
-let NERDTreeShowHidden=1
 let g:indentLine_setConceal = 0
 
 set termguicolors
@@ -78,10 +71,8 @@ set conceallevel=0
 
 let mapleader = "\<space>"
 nnoremap <leader>; A;<esc>
-nnoremap <leader>s :w<cr>
-nnoremap <leader>q :q<cr>
-nnoremap <leader>n :NERDTreeToggle<cr>
-nnoremap <leader>m :NERDTreeFind<cr>
+nnoremap <leader>n :CocCommand explorer --toggle<CR>
+nnoremap <leader>m :CocCommand explorer --position floating<CR>
 nnoremap <silent> <leader>o :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
 nnoremap <silent> <leader>O :<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>
 nmap <leader>gs :G<CR>
@@ -108,17 +99,18 @@ function! GitStatus()
 endfunction
 set statusline+=%{GitStatus()}
 
-"===Coc stuff bellow===
 let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-tsserver',
   \ 'coc-eslint', 
   \ 'coc-prettier', 
   \ 'coc-json', 
+  \ 'coc-yaml',
   \ 'coc-python',
   \ 'coc-phpls',
   \ 'coc-emmet',
-  \ 'coc-inline-jest'
+  \ 'coc-jest',
+  \ 'coc-explorer'
   \ ]
 
 set cmdheight=2
@@ -163,7 +155,6 @@ command! -nargs=0 Format :call CocAction('format')
 
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
-" === Denite setup ==="
 call denite#custom#var('file/rec', 'command', ['rg', '--files', '--glob', '!.git'])
 call denite#custom#var('grep', 'command', ['rg'])
 call denite#custom#var('grep', 'default_opts', ['--hidden', '--vimgrep', '--heading', '-S'])
