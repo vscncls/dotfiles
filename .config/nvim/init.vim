@@ -27,7 +27,12 @@ Plug 'jiangmiao/auto-pairs'
 "Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
 
+let g:gruvbox_inverted_selection='0'
 set background=dark
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
 colorscheme gruvbox
 
 let g:deoplete#enable_at_startup = 1
@@ -66,8 +71,9 @@ set cursorline
 set clipboard=unnamedplus
 set splitbelow
 set splitright
-set colorcolumn=80
+set colorcolumn=120
 set conceallevel=0
+set nowrap
 
 let mapleader = "\<space>"
 nnoremap <leader>; A;<esc>

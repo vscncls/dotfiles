@@ -3,9 +3,7 @@
     "explorer.file.showHiddenFiles": true,
     "coc.preferences.formatOnInsertLeave": true,
     "python.linting.flake8Enabled": true,
-    "emmet.includeLanguages": {
-        "javascript":"javascriptreact"
-    },
+    "python.jediEnabled": false,
     "languageserver": {
         "ccls": {
             "command": "ccls",
