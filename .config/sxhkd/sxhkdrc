@@ -8,10 +8,7 @@ super + shift + Escape
     betterlockscreen -s blur
 
 super + shift + d
-    rofi -show drun -font "DejaVu 12" -show-icons
-
-super + shift + c
-    pkill -USR1 -x sxhkd
+    dmenu_run_history
 
 super + shift + e
     bspc quit
@@ -63,7 +60,7 @@ XF86AudioStop
     dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop
 
 Print
-    $HOME/.local/bin/screenshot
+    sh $HOME/.local/bin/screenshot
 
 super + {t,shift + t,s,f}
     bspc node -t {tiled,pseudo_tiled,floating,fullscreen}

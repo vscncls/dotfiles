@@ -34,17 +34,11 @@ compositing-overline = over
 compositing-underline = over
 compositing-border = over
 
-format-foreground = #FF0000
-format-background = #00FF00
-format-underline =
-format-overline =
-format-spacing =
-format-padding =
-format-margin =
-format-offset =
-
 [colors]
-background = #292d3e
+;background = #292d3e
+background = #282828
+;secondary = #6790eb
+secondary = #ebdbb2
 foreground = #c0c5ce
 alert = #bd2c40
 
@@ -73,10 +67,12 @@ enable-ipc = true
 ;https://github.com/jaagr/polybar/wiki/Fonts
 font-0 = "UbuntuMono Nerd Font:size=10;2"
 font-1 = "UbuntuMono Nerd Font:size=16;3"
-font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=8;1"
-font-3 = "Font Awesome 5 Free:style=Solid:pixelsize=8;1"
-font-4 = "Font Awesome 5 Brands:pixelsize=8;1"
+font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=10;1"
+font-3 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
+font-4 = "Font Awesome 5 Brands:pixelsize=10;1"
+;font-5 = "Noto Fonts Emoji:style=Regular:scale=40:pixelsize=8"
 
+modules-center = spotify1
 modules-left = bspwm xwindow
 
 
@@ -99,8 +95,6 @@ line-size = 2
 wm-restack = bspwm
 override-redirect = true
 
-; Enable support for inter-process messaging
-; See the Messaging wiki page for more details.
 enable-ipc = true
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
@@ -109,10 +103,10 @@ font-1 = "UbuntuMono Nerd Font:size=16;3"
 font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=8;1"
 font-3 = "Font Awesome 5 Free:style=Solid:pixelsize=8;1"
 font-4 = "Font Awesome 5 Brands:pixelsize=8;1"
+;font-5 = "Noto Fonts Emoji:style=Regular:scale=10"
 
 modules-left = bspwm xwindow
-modules-center = spotify1
-modules-right = date battery
+modules-right = date battery vpn
 
 tray-detached = false
 tray-position = right
@@ -125,9 +119,9 @@ tray-background = ${colors.background}
 [module/bspwm]
 type = internal/bspwm
 
-enable-click = true
-enable-scroll = true
-reverse-scroll = true
+enable-click = false
+enable-scroll = false
+reverse-scroll = false
 pin-workspaces = true
 
 ws-icon-0 = 1;1
@@ -146,7 +140,7 @@ format = <label-state> <label-mode>
 
 label-focused = %icon%
 label-focused-background = ${colors.background}
-label-focused-underline= #6790eb
+label-focused-underline= ${colors.secondary}
 label-focused-padding = 2
 label-focused-foreground = ${colors.foreground}
 
@@ -242,11 +236,11 @@ date = " %a %b %d, %Y"
 date-alt = " %a %b %d, %Y"
 time = %l:%M%p
 time-alt = %l:%M%p
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-label = "%date% %time% "
+label = "%date%   %time% "
 
 
 [module/pavolume]
@@ -272,9 +266,9 @@ interval = 1
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 format-padding = 2
-format-underline = #0f0
-;format-prefix = "  "
-format-prefix-foreground = #0f0
+;format-underline = #0f0
+format-prefix = "  "
+;format-prefix-foreground = #0f0
 label = %output:0:150%
 
 
@@ -350,3 +344,12 @@ format-prefix = "  "
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
+
+[module/vpn]
+type = custom/script
+exec = echo VPN
+exec-if = pgrep -x openfortivpn
+interval = 5
+format-prefix = " "
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}

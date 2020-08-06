@@ -9,4 +9,4 @@ $HOME/.config/polybar/panel.sh &
 pasystray &
 nm-applet &
 
-ssh-agent bspwm
+exec bspwm
