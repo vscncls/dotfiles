@@ -33,4 +33,4 @@ abbr yr yarn run
 
 set MAKEFLAGS '-j'(nproc)''
 
-source ~/.asdf/asdf.fish
+. ~/.asdf/asdf.fish
