@@ -23,9 +23,17 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'terryma/vim-multiple-cursors'
 Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'jiangmiao/auto-pairs'
+Plug 'puremourning/vimspector'
 
 "Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
+
+let g:vimspector_enable_mappings = 'HUMAN'
+nmap <leader>dd :call vimspector#Launch()<CR>
+nmap <leader>dx :VimspectorReset<CR>
+nmap <leader>de :VimspectorEval 
+nmap <leader>dw :VimspectorWatch 
+nmap <leader>do :VimspectorShowOutput
 
 let g:gruvbox_inverted_selection='0'
 set background=dark
@@ -33,6 +41,7 @@ if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
+let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox
 
 let g:deoplete#enable_at_startup = 1
@@ -52,6 +61,9 @@ let g:airline_symbols.linenr = '☰'
 let g:airline_symbols.maxlinenr = ''
 let g:airline_symbols.dirty='⚡'
 let g:indentLine_setConceal = 0
+
+let g:python3_host_prog = '/bin/python3'
+let g:node_host_prog = '/bin/node'
 
 set termguicolors
 set hidden
@@ -100,10 +112,18 @@ vmap <C-_> gc
 nnoremap <leader>t :split<cr>:term fish<cr>
 
 function! GitStatus()
-    let [a,m,r] = GitGutterGetHunkSummary()
-    return printf('+%d ~%d -%d', a, m, r)
+  let [a,m,r] = GitGutterGetHunkSummary()
+  return printf('+%d ~%d -%d', a, m, r)
 endfunction
 set statusline+=%{GitStatus()}
+
+function! MdPreview()
+  if (expand("%:e") != "md")
+    echo "Not a markdown file!"
+    return
+  endif
+  !pandoc -s -o /tmp/file-preview.pdf % && zathura /tmp/file-preview.pdf
+endfunction
 
 let g:coc_global_extensions = [
   \ 'coc-snippets',
