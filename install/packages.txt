@@ -36,6 +36,7 @@ noto-fonts
 noto-emoji
 gnu-free-fonts
 ttf-fira-code
+ttf-jetbrains-mono
 ttf-ubuntu-font-family
 man-db
 man-pages
