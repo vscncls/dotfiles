@@ -46,3 +46,4 @@ arc-gtk-theme
 papirus-icon-theme
 shotgun
 hacksaw
+fzf

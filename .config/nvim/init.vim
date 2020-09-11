@@ -21,19 +21,21 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-sleuth'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'terryma/vim-multiple-cursors'
-Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'junegunn/fzf.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'puremourning/vimspector'
+Plug 'ntpeters/vim-better-whitespace'
 
 "Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
 
+let mapleader = "\<space>"
 source ~/.config/nvim/vimspector.vim
 source ~/.config/nvim/gruvbox.vim
 source ~/.config/nvim/airline.vim
 source ~/.config/nvim/md_preview.vim
 source ~/.config/nvim/coc.vim
-source ~/.config/nvim/denite.vim
+source ~/.config/nvim/fzf.vim
 
 let g:python3_host_prog = '/bin/python3'
 let g:node_host_prog = '/bin/node'
@@ -60,7 +62,6 @@ set colorcolumn=120
 set conceallevel=0
 set nowrap
 
-let mapleader = "\<space>"
 nnoremap <leader>; A;<esc>
 nnoremap <leader>n :CocCommand explorer --toggle<CR>
 nnoremap <leader>m :CocCommand explorer --position floating<CR>

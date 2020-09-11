@@ -26,11 +26,13 @@ abbr gc! git commit -v --amend
 abbr l ls
 abbr gaa git add .
 
-abbr yw yarn workspace 
-abbr ya yarn add 
-abbr yad yarn add --dev 
+abbr yw yarn workspace
+abbr ya yarn add
+abbr yad yarn add --dev
 abbr yr yarn run
 
 set MAKEFLAGS '-j'(nproc)''
+
+set FZF_DEFAULT_COMMAND 'rg --files --hidden --glob "!.git/"'
 
 . ~/.asdf/asdf.fish
