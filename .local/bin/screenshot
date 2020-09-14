@@ -1,6 +1,6 @@
 #!/bin/env sh
 
-FILE_PATH="$HOME/Screenshots/$(date | sed -e "s/ /-/g")"
+FILE_PATH="$HOME/Screenshots/$(date | sed -e "s/ /-/g").png"
 selection=$(hacksaw -f "-i %i -g %g")
 if [ -z $selection ]
 then
