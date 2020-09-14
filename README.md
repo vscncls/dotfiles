@@ -17,3 +17,5 @@
 * shotgun & hacksaw (really simple screenshot utils)
 
 and some other stuff, i guess
+
+to deploy the dotfiles just cd into this directory and run `stow -v --adopt .`
