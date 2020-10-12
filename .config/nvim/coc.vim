@@ -12,6 +12,8 @@ let g:coc_global_extensions = [
   \ 'coc-explorer'
   \ ]
 
+nnoremap F :Format<CR>:w<CR>
+
 set cmdheight=2
 set updatetime=300
 set shortmess+=c
