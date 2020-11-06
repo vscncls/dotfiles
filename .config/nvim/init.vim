@@ -10,6 +10,7 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'othree/yajs.vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'elixir-editors/vim-elixir'
 "==Git==
 Plug 'tpope/vim-fugitive'
 Plug 'APZelos/blamer.nvim'

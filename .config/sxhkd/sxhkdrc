@@ -2,10 +2,10 @@ super + Return
     st -e fish
 
 super + Escape
-    betterlockscreen -l blur
+    betterlockscreen -l
 
 super + shift + Escape
-    betterlockscreen -s blur
+    betterlockscreen -s
 
 super + shift + d
     dmenu_run_history
