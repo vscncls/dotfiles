@@ -33,6 +33,4 @@ abbr yr yarn run
 
 set MAKEFLAGS '-j'(nproc)''
 
-set FZF_DEFAULT_COMMAND 'rg --files --hidden --glob "!.git/"'
-
 . ~/.asdf/asdf.fish

@@ -1,8 +1,7 @@
 {
-    "python.formatting.provider": "autopep8",
+    "python.formatting.provider": "black",
     "explorer.file.showHiddenFiles": true,
     "coc.preferences.formatOnInsertLeave": true,
-    "python.linting.flake8Enabled": true,
     "python.jediEnabled": false,
     "languageserver": {
         "ccls": {

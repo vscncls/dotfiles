@@ -72,7 +72,6 @@ font-3 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
 font-4 = "Font Awesome 5 Brands:pixelsize=10;1"
 ;font-5 = "Noto Fonts Emoji:style=Regular:scale=40:pixelsize=8"
 
-modules-center = spotify1
 modules-left = bspwm xwindow
 modules-right = date
 
@@ -106,6 +105,7 @@ font-3 = "Font Awesome 5 Free:style=Solid:pixelsize=8;1"
 font-4 = "Font Awesome 5 Brands:pixelsize=8;1"
 ;font-5 = "Noto Fonts Emoji:style=Regular:scale=10"
 
+modules-center = spotify1
 modules-left = bspwm xwindow
 modules-right = date battery vpn
 
