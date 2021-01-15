@@ -74,6 +74,7 @@ font-4 = "Font Awesome 5 Brands:pixelsize=10;1"
 
 modules-left = bspwm xwindow
 modules-right = date
+modules-center = spotify1
 
 
 [bar/mainbar-bspwm]
