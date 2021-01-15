@@ -8,5 +8,6 @@ dunst &
 $HOME/.config/polybar/panel.sh &
 pasystray &
 nm-applet &
+redshift-gtk &
 
 exec bspwm
