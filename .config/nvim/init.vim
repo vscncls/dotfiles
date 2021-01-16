@@ -26,6 +26,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'puremourning/vimspector'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'justinmk/vim-sneak'
 
 "Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
@@ -85,3 +86,5 @@ nnoremap <A-k> :resize +5<cr>
 nmap <C-_> gcc
 vmap <C-_> gc
 nnoremap <leader>t :split<cr>:term fish<cr>
+
+let g:sneak#s_next = 1
