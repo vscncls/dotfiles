@@ -76,6 +76,13 @@ modules-left = bspwm xwindow
 modules-right = date
 modules-center = spotify1
 
+tray-detached = false
+tray-position = right
+tray-padding = 2
+tray-maxsize = 20
+tray-scale = 1.0
+tray-background = ${colors.background}
+
 
 [bar/mainbar-bspwm]
 monitor = ${env:MONITOR}
@@ -109,13 +116,6 @@ font-4 = "Font Awesome 5 Brands:pixelsize=8;1"
 modules-center = spotify1
 modules-left = bspwm xwindow
 modules-right = date battery vpn
-
-tray-detached = false
-tray-position = right
-tray-padding = 2
-tray-maxsize = 20
-tray-scale = 1.0
-tray-background = ${colors.background}
 
 
 [module/bspwm]

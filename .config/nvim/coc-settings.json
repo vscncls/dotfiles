@@ -1,11 +1,16 @@
-{
-    "python.formatting.provider": "black",
-    "explorer.file.showHiddenFiles": true,
-    "coc.preferences.formatOnInsertLeave": true,
-    "python.jediEnabled": false,
-    "languageserver": {
-        "ccls": {
-            "command": "ccls",
+    {
+        "python.formatting.provider": "black",
+        "explorer.file.showHiddenFiles": true,
+        "coc.preferences.formatOnInsertLeave": true,
+        "prettier.eslintIntegration": true,
+        "vetur.format.defaultFormatter.html": "prettier",
+        "vetur.format.defaultFormatter.ts": "prettier",
+        "vetur.format.defaultFormatter.js": "prettier",
+        "vetur.format.defaultFormatter.css": "prettier",
+        "prettier.disableLanguages": [],
+        "languageserver": {
+            "ccls": {
+                "command": "ccls",
             "filetypes": [
                 "c",
                 "cpp",
