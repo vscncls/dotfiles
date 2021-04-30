@@ -58,5 +58,5 @@ command! -nargs=0 Format :call CocAction('format')
 
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
-nnoremap <leader>n :CocCommand explorer --toggle<CR>
+nnoremap <leader>n :CocCommand explorer --toggle --poistion right<CR>
 nnoremap <leader>m :CocCommand explorer --position floating<CR>
