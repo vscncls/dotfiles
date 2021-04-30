@@ -5,6 +5,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'ryanoasis/vim-devicons'
 Plug 'gruvbox-community/gruvbox'
+Plug 'sainnhe/gruvbox-material'
 "==Syntax Highlight==
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'othree/yajs.vim'
