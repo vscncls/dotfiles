@@ -9,10 +9,12 @@ let g:coc_global_extensions = [
   \ 'coc-phpls',
   \ 'coc-emmet',
   \ 'coc-jest',
-  \ 'coc-explorer'
+  \ 'coc-explorer',
+  \ 'coc-go',
+  \ 'coc-java'
   \ ]
 
-nnoremap F :Format<CR>:w<CR>
+nnoremap F :Format<CR>
 
 set cmdheight=2
 set updatetime=300
@@ -55,3 +57,6 @@ nmap <leader>rn <Plug>(coc-rename)
 command! -nargs=0 Format :call CocAction('format')
 
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+nnoremap <leader>n :CocCommand explorer --toggle<CR>
+nnoremap <leader>m :CocCommand explorer --position floating<CR>

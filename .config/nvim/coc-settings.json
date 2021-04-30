@@ -1,7 +1,7 @@
     {
         "python.formatting.provider": "black",
         "explorer.file.showHiddenFiles": true,
-        "coc.preferences.formatOnInsertLeave": true,
+        "go.goplsPath": "/bin/gopls",
         "prettier.eslintIntegration": true,
         "vetur.format.defaultFormatter.html": "prettier",
         "vetur.format.defaultFormatter.ts": "prettier",

@@ -10,7 +10,7 @@ super + shift + Escape
 super + shift + d
     dmenu_run_history
 
-super + shift + e
+super + shift + ctrl + e
     bspc quit
 
 super + {_,shift +} q
@@ -36,33 +36,31 @@ super + alt + {h,j,k,l}
 super + alt + shift + {h,j,k,l}
     bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
-XF86MonBrightnessUp
+F4
     xbacklight -inc 5
 
-XF86MonBrightnessDown
+F5
     xbacklight -dec 5
 
-XF86AudioLowerVolume
+F6
     pactl -- set-sink-volume $(pactl -- list sinks short | grep RUNNING | awk '\{print $1\}') -10%
-XF86AudioRaiseVolume
+
+F7
     pactl -- set-sink-volume $(pactl -- list sinks short | grep RUNNING | awk '\{print $1\}') +10%
 
-XF86AudioMute
+F8
     pactl set-sink-mute $(pactl -- list sinks short | grep RUNNING | awk '\{print $1\}') toggle
 
-XF86AudioPlay
-    dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
-
-XF86AudioNext
-    dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
-
-XF86AudioPrev
+F9
     dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
 
-XF86AudioStop
-    dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop
+F10
+    dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
 
-Print
+F11
+    dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+
+F12
     sh $HOME/.local/bin/screenshot
 
 super + {t,shift + t,s,f}

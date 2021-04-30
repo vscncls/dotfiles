@@ -66,8 +66,6 @@ set conceallevel=0
 set nowrap
 
 nnoremap <leader>; A;<esc>
-nnoremap <leader>n :CocCommand explorer --toggle<CR>
-nnoremap <leader>m :CocCommand explorer --position floating<CR>
 nnoremap <silent> <leader>o :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
 nnoremap <silent> <leader>O :<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>
 nmap <leader>gs :G<CR>
