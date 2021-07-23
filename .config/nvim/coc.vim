@@ -11,7 +11,8 @@ let g:coc_global_extensions = [
   \ 'coc-jest',
   \ 'coc-explorer',
   \ 'coc-go',
-  \ 'coc-java'
+  \ 'coc-java',
+  \ 'coc-elixir'
   \ ]
 
 nnoremap F :Format<CR>
@@ -60,3 +61,5 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 nnoremap <leader>n :CocCommand explorer --toggle --position right<CR>
 nnoremap <leader>m :CocCommand explorer --position floating<CR>
+
+autocmd FileType python let b:coc_root_patterns = ['.git', '.env', 'venv', '.venv', 'setup.cfg', 'setup.py', 'pyproject.toml', 'pyrightconfig.json']

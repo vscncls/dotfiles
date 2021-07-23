@@ -13,6 +13,7 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'elixir-editors/vim-elixir'
 Plug 'cespare/vim-toml'
+Plug 'uiiaoo/java-syntax.vim'
 "==Git==
 Plug 'tpope/vim-fugitive'
 Plug 'APZelos/blamer.nvim'
@@ -65,6 +66,7 @@ set splitright
 set colorcolumn=120
 set conceallevel=0
 set nowrap
+set mouse+=a
 
 nnoremap <leader>; A;<esc>
 nnoremap <silent> <leader>o :<C-u>call append(line("."),   repeat([""], v:count1))<CR>

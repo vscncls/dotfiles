@@ -1,34 +1,31 @@
-    {
-        "python.formatting.provider": "black",
-        "explorer.file.showHiddenFiles": true,
-        "go.goplsPath": "/bin/gopls",
-        "prettier.eslintIntegration": true,
-        "vetur.format.defaultFormatter.html": "prettier",
-        "vetur.format.defaultFormatter.ts": "prettier",
-        "vetur.format.defaultFormatter.js": "prettier",
-        "vetur.format.defaultFormatter.css": "prettier",
-        "prettier.disableLanguages": [],
-        "languageserver": {
-            "ccls": {
-                "command": "ccls",
-            "filetypes": [
-                "c",
-                "cpp",
-                "objc",
-                "objcpp"
-            ],
-            "rootPatterns": [
-                ".ccls",
-                "compile_commands.json",
-                ".vim/",
-                ".git/",
-                ".hg/"
-            ],
-            "initializationOptions": {
-                "cache": {
-                    "directory": "/tmp/ccls"
-                }
-            }
+{
+  "python.formatting.provider": "black",
+  "explorer.file.showHiddenFiles": true,
+  "go.goplsPath": "/bin/gopls",
+  "prettier.eslintIntegration": true,
+  "vetur.format.defaultFormatter.html": "prettier",
+  "vetur.format.defaultFormatter.ts": "prettier",
+  "vetur.format.defaultFormatter.js": "prettier",
+  "vetur.format.defaultFormatter.css": "prettier",
+  "prettier.disableLanguages": [],
+  "eslint.run": "onSave",
+  "languageserver": {
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cpp", "objc", "objcpp"],
+      "rootPatterns": [
+        ".ccls",
+        "compile_commands.json",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
+      "initializationOptions": {
+        "cache": {
+          "directory": "/tmp/ccls"
         }
+      }
     }
+  },
+  "java.jdt.ls.vmargs": "-javaagent:/home/lucas/Downloads/lombok.jar -Xbootclasspath/a:/home/lucas/Downloads/lombok.jar -noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication"
 }
