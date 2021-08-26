@@ -90,3 +90,5 @@ vmap <C-_> gc
 nnoremap <leader>t :split<cr>:term fish<cr>
 
 let g:sneak#s_next = 1
+let g:node_host_prog = '/usr/bin/node'
+let g:coc_node_path = '/usr/bin/node'

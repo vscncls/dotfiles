@@ -23,6 +23,7 @@ abbr gca git commit --all -v
 abbr gca! git commit --all -v --amend
 abbr gc git commit -v
 abbr gc! git commit -v --amend
+abbr gcwip git commit -m "WIP"
 abbr l ls
 abbr gaa git add .
 
