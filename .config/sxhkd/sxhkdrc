@@ -71,3 +71,6 @@ super + b
 
 super + r
     bspc config top_padding $([ $(bspc config top_padding) = 0 ] && echo 20 || echo 0 ); polybar-msg cmd toggle
+
+super + space
+    dmenu_run_history
