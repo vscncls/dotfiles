@@ -1,9 +1,12 @@
 set PATH (yarn global bin) $PATH
+set PATH ~/.config/yarn/global/node_modules/.bin $PATH
 set PATH ~/.emacs.d/bin $PATH
 set fish_greeting
 set -Ux PAGER less
 set -Ux EDITOR nvim
 set -Ux BROWSER firefox-developer-edition
+
+alias ls lsd
 
 abbr g git
 abbr ga git add

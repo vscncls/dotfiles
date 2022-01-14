@@ -25,6 +25,13 @@
           "directory": "/tmp/ccls"
         }
       }
+    },
+    "terraform": {
+      "command": "terraform-ls",
+      "args": ["serve"],
+      "filetypes": ["terraform", "tf"],
+      "initializationOptions": {},
+      "settings": {}
     }
   },
   "java.jdt.ls.vmargs": "-javaagent:/home/lucas/Downloads/lombok.jar -Xbootclasspath/a:/home/lucas/Downloads/lombok.jar -noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication"

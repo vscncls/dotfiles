@@ -66,7 +66,7 @@ enable-ipc = true
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
 font-0 = "UbuntuMono Nerd Font:size=8;2"
-font-1 = "UbuntuMono Nerd Font:size=14;3"
+font-1 = "Noto Sans CJK JP:size=10:antialias=true;0"		# (Japanese) Band names, etc.
 font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=8;1"
 font-3 = "Font Awesome 5 Free:style=Solid:pixelsize=8;1"
 font-4 = "Font Awesome 5 Brands:pixelsize=8;1"
@@ -106,6 +106,7 @@ font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=8;1"
 font-3 = "Font Awesome 5 Free:style=Solid:pixelsize=8;1"
 font-4 = "Font Awesome 5 Brands:pixelsize=8;1"
 font-5 = "Noto Fonts Emoji:style=Regular:scale=10"
+font-6 = "Noto Sans CJK JP:style=Regular:pixelsize=8;1"
 
 modules-center = spotify1
 modules-left = bspwm xwindow
@@ -262,6 +263,7 @@ format-background = #FFE585
 ;https://github.com/NicholasFeldman/dotfiles/blob/master/polybar/.config/polybar/spotify.sh
 type = custom/script
 exec = ~/.config/polybar/scripts/spotify1.sh
+exec-if = pgrep -x spotify
 interval = 1
 
 ;format = <label>

@@ -74,3 +74,17 @@ super + r
 
 super + space
     dmenu_run_history
+
+ctrl + space
+    dunstctl close
+
+ctrl + shift + space
+    dunstctl close-all
+
+ctrl + apostrophe
+    dunstctl history-pop
+
+ctrl + Caps_Lock
+    dunstctl context
+
+# vim: sw=4
