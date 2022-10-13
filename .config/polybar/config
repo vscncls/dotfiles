@@ -66,11 +66,11 @@ enable-ipc = true
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
 font-0 = "UbuntuMono Nerd Font:size=8;2"
-font-1 = "Noto Sans CJK JP:size=10:antialias=true;0"		# (Japanese) Band names, etc.
-font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=8;1"
-font-3 = "Font Awesome 5 Free:style=Solid:pixelsize=8;1"
-font-4 = "Font Awesome 5 Brands:pixelsize=8;1"
-font-5 = "Noto Fonts Emoji:style=Regular:scale=40:pixelsize=6"
+font-1 = "Noto Fonts Emoji:style=Regular:scale=40:pixelsize=6"		# (Japanese) Band names, etc.
+font-2 = "Font Awesome 6 Free:style=Regular:pixelsize=8;1"
+font-3 = "Font Awesome 6 Free:style=Solid:pixelsize=8;1"
+font-4 = "Font Awesome 6 Brands:pixelsize=8;1"
+font-5 = "Noto Sans CJK JP:style=Regular:pixelsize=8;1"
 
 modules-left = bspwm xwindow
 modules-right = date
@@ -100,13 +100,12 @@ override-redirect = true
 enable-ipc = true
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "UbuntuMono Nerd Font:size=10;2"
-font-1 = "UbuntuMono Nerd Font:size=16;3"
-font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=8;1"
-font-3 = "Font Awesome 5 Free:style=Solid:pixelsize=8;1"
-font-4 = "Font Awesome 5 Brands:pixelsize=8;1"
-font-5 = "Noto Fonts Emoji:style=Regular:scale=10"
-font-6 = "Noto Sans CJK JP:style=Regular:pixelsize=8;1"
+font-0 = "UbuntuMono Nerd Font:size=8;2"
+font-1 = "Noto Fonts Emoji:style=Regular:scale=40:pixelsize=6"		# (Japanese) Band names, etc.
+font-2 = "Font Awesome 6 Free:style=Regular:pixelsize=8;1"
+font-3 = "Font Awesome 6 Free:style=Solid:pixelsize=8;1"
+font-4 = "Font Awesome 6 Brands:pixelsize=8;1"
+font-5 = "Noto Sans CJK JP:style=Regular:pixelsize=8;1"
 
 modules-center = spotify1
 modules-left = bspwm xwindow

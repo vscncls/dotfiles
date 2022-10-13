@@ -1,7 +1,5 @@
 #!/bin/sh
 
-$HOME/.config/screen-layout/bspwm.sh
-
 bspc config border_width         1
 bspc config window_gap           0
 bspc config top_padding          20
@@ -32,3 +30,5 @@ bspc config urgent_border_color     "#cc241d"
 bspc rule -a Zathura state=tiled
 bspc rule -a firefoxdeveloperedition:Toolkit sticky=on state=floating
 bspc rule -a emacs state=tiled
+
+$HOME/.config/screen-layout/bspwm.sh

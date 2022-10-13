@@ -4,7 +4,7 @@ set PATH ~/.emacs.d/bin $PATH
 set fish_greeting
 set -Ux PAGER less
 set -Ux EDITOR nvim
-set -Ux BROWSER firefox-developer-edition
+set -Ux BROWSER brave
 
 alias ls lsd
 

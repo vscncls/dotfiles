@@ -36,10 +36,10 @@ super + alt + {h,j,k,l}
 super + alt + shift + {h,j,k,l}
     bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
-F4
+ctrl + l + equal
     xbacklight -inc 5
 
-F5
+ctrl + l + minus
     xbacklight -dec 5
 
 F6

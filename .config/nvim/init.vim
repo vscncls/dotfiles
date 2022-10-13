@@ -14,6 +14,7 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'elixir-editors/vim-elixir'
 Plug 'cespare/vim-toml'
 Plug 'uiiaoo/java-syntax.vim'
+Plug 'leafOfTree/vim-svelte-plugin'
 "==Git==
 Plug 'tpope/vim-fugitive'
 Plug 'APZelos/blamer.nvim'
@@ -24,7 +25,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-sleuth'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'terryma/vim-multiple-cursors'
 Plug 'junegunn/fzf.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'puremourning/vimspector'
