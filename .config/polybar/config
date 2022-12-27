@@ -121,8 +121,8 @@ tray-background = ${colors.background}
 [module/bspwm]
 type = internal/bspwm
 
-enable-click = false
-enable-scroll = false
+enable-click = true
+enable-scroll = true
 reverse-scroll = false
 pin-workspaces = true
 
