@@ -1,5 +1,8 @@
 super + Return
-    st -e fish
+    alacritty
+
+super + shift + s
+    bspc node -g sticky
 
 super + Escape
     betterlockscreen -l
@@ -62,6 +65,9 @@ F11
 
 F12
     sh $HOME/.local/bin/screenshot
+
+shift + F12
+    peek
 
 super + {t,shift + t,s,f}
     bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
