@@ -35,12 +35,15 @@ compositing-underline = over
 compositing-border = over
 
 [colors]
-;background = #292d3e
-background = #282828
-;secondary = #6790eb
-secondary = #ebdbb2
-foreground = #c0c5ce
-alert = #bd2c40
+;gruvbox
+;background = #282828
+;secondary = #ebdbb2
+;foreground = #c0c5ce
+;alert = #bd2c40
+background = #000000
+secondary = #ffffff
+foreground = #ffffff
+alert = #fe0100
 
 
 [bar/sidebar-bspwm]
@@ -92,6 +95,13 @@ separator = " "
 background = ${colors.background}
 foreground = ${colors.foreground}
 
+tray-detached = false
+tray-position = right
+tray-padding = 2
+tray-maxsize = 20
+tray-scale = 1.0
+tray-background = ${colors.background}
+
 line-size = 2
 
 wm-restack = bspwm
@@ -110,13 +120,6 @@ font-5 = "Noto Sans CJK JP:style=Regular:pixelsize=8;1"
 modules-center = spotify1
 modules-left = bspwm xwindow
 modules-right = ip date battery vpn
-
-tray-detached = false
-tray-position = right
-tray-padding = 2
-tray-maxsize = 20
-tray-scale = 1.0
-tray-background = ${colors.background}
 
 [module/bspwm]
 type = internal/bspwm

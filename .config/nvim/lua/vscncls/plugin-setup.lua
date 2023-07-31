@@ -1,8 +1,8 @@
 -- telescope
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<ctrl-f>', builtin.find_files, {})
+vim.keymap.set('n', '<c-f>', builtin.find_files, {})
 vim.keymap.set('n', '<leader>f', function()
-	builtin.grep_string({ search = vim.fn.input("Grep > ") })
+  builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
 
 require("telescope").load_extension "file_browser"
@@ -31,7 +31,7 @@ vim.g.loaded_netrwPlugin = 1
 
 -- empty setup using defaults
 require("nvim-tree").setup({
-    on_attach = "enabled"
+  on_attach = "enabled"
 })
 
 local api = require("nvim-tree.api")
@@ -42,9 +42,9 @@ vim.keymap.set("n", "<leader>n", api.tree.toggle)
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'gruvbox',
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
+    theme = 'auto',
+    component_separators = { left = '', right = '' },
+    section_separators = { left = '', right = '' },
     disabled_filetypes = {
       statusline = {},
       winbar = {},
@@ -59,18 +59,18 @@ require('lualine').setup {
     }
   },
   sections = {
-    lualine_a = {'mode'},
-    lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {'filename'},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
-    lualine_y = {'progress'},
-    lualine_z = {'location'}
+    lualine_a = { 'mode' },
+    lualine_b = { 'branch', 'diff', 'diagnostics' },
+    lualine_c = { 'filename' },
+    lualine_x = { 'encoding', 'fileformat', 'filetype' },
+    lualine_y = { 'progress' },
+    lualine_z = { 'location' }
   },
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},
-    lualine_c = {'filename'},
-    lualine_x = {'location'},
+    lualine_c = { 'filename' },
+    lualine_x = { 'location' },
     lualine_y = {},
     lualine_z = {}
   },
@@ -113,18 +113,18 @@ local on_attach = function(_, bufnr)
   end, { desc = 'Format current buffer with LSP' })
 end
 
-vim.keymap.set('n', '<leader>u', ":Format<CR>")
+vim.keymap.set('n', '<s-f>', ":Format<CR>")
 
 local servers = {
-    gopls = {},
-    tsserver = {},
-    clojure_lsp = {},
-    lua_ls = {
-        Lua = {
-            workspace = { checkThirdParty = false },
-            telemetry = { enable = false },
-        },
+  gopls = {},
+  tsserver = {},
+  clojure_lsp = {},
+  lua_ls = {
+    Lua = {
+      workspace = { checkThirdParty = false },
+      telemetry = { enable = false },
     },
+  },
 }
 
 -- Setup neovim lua configuration

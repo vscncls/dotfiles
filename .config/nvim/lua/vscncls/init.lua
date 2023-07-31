@@ -4,4 +4,5 @@ require("vscncls.settings")
 require("vscncls.plugin-setup")
 
 vim.o.background = "dark"
-vim.cmd.colorscheme("gruvbox")
+--vim.cmd.colorscheme("gruvbox")
+vim.cmd.colorscheme("catppuccin")
