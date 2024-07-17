@@ -144,10 +144,10 @@ require('lazy').setup({
         },
     },
 
-    {
-        'Olical/conjure',
-        dependencies = {
-            'clojure-vim/vim-jack-in',
-        },
-    },
+    --{
+    --    'Olical/conjure',
+    --    dependencies = {
+    --        'clojure-vim/vim-jack-in',
+    --    },
+    --},
 }, {})

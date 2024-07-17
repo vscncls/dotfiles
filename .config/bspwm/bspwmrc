@@ -30,6 +30,7 @@ bspc config urgent_border_color     "#cc241d"
 
 bspc rule -a Zathura state=tiled
 bspc rule -a Peek state=floating
+bspc rule -a Bitwarden state=floating
 bspc rule -a firefoxdeveloperedition:Toolkit sticky=on state=floating
 bspc rule -a emacs state=tiled
 

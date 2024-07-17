@@ -1,12 +1,15 @@
-set PATH (yarn global bin) $PATH
+#set PATH (yarn global bin) $PATH
 set PATH ~/.config/yarn/global/node_modules/.bin $PATH
 set PATH ~/.emacs.d/bin $PATH
 set PATH ~/.local/bin $PATH
 set PATH ~/.local/share/pnpm $PATH
+set PATH ~/.bun/bin $PATH
+set PATH ~/.cargo/bin $PATH
+set PATH ~/go/bin $PATH
+
 set fish_greeting
 set -Ux PAGER less
 set -Ux EDITOR nvim
-set -Ux BROWSER firefox-developer-edition
 
 alias ls lsd
 
@@ -42,3 +45,9 @@ set MAKEFLAGS '-j'(nproc)''
 set FZF_DEFAULT_COMMAND 'rg --files --hidden --glob "!.git/" --glob "!*.class"'
 
 . ~/.asdf/asdf.fish
+
+if test ! -e $HOME/.config/fish/zellij.fish
+				zellij setup --generate-completion fish > $HOME/.config/fish/zellij.fish
+end
+
+source $HOME/.config/fish/zellij.fish

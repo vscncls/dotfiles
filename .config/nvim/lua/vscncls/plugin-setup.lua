@@ -25,13 +25,12 @@ require('nvim-treesitter.configs').setup {
   indent = { enable = true },
 }
 
---nvim-tree(maybe remove???)
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
 -- empty setup using defaults
 require("nvim-tree").setup({
-  on_attach = "enabled"
+  on_attach = "enabled",
+  view = {
+    side = "right",
+  },
 })
 
 local api = require("nvim-tree.api")
@@ -151,6 +150,8 @@ mason_lspconfig.setup_handlers {
     }
   end
 }
+
+require'lspconfig'.hls.setup{}
 
 --cmp
 local cmp = require 'cmp'

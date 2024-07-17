@@ -13,4 +13,11 @@ nm-applet &
 redshift-gtk &
 easyeffects &
 
+thorium-browser &
+spotify &
+discord &
+steam &
+
+setxkbmap -option compose:caps
+
 exec bspwm

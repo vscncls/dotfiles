@@ -4,7 +4,7 @@ FILE_PATH="$HOME/Screenshots/$(date | sed -e "s/ /-/g").png"
 selection=$(hacksaw -f "-i %i -g %g")
 if [ -z $selection ]
 then
-    exit 1
+    exit 0
 fi
 shotgun $selection $FILE_PATH
 xclip $FILE_PATH -t 'image/png' -selection clipboard

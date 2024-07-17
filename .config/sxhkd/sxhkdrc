@@ -87,9 +87,6 @@ ctrl + space
 ctrl + shift + space
     dunstctl close-all
 
-ctrl + apostrophe
-    dunstctl history-pop
-
 ctrl + Caps_Lock
     dunstctl context
 
