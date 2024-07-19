@@ -1,0 +1,18 @@
+import = ["~/.config/alacritty/alacritty-theme/themes/solarized_light.toml"]
+
+[font]
+normal = {family = "BigBlueTerm437 NerdFont Mono"}
+size = 10.0
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Plus"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = 12
+mods = "Control|Shift"
+
+[shell]
+program = "/bin/fish"
