@@ -659,7 +659,7 @@ require('lazy').setup({
     },
   },
 
-  { 'wakatime/vim-wakatime', lazy = false },
+  -- { 'wakatime/vim-wakatime', lazy = false },
 }, {
   ui = {},
 })
