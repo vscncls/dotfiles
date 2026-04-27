@@ -1,0 +1,125 @@
+/* Gruvbox Light palette */
+@define-color bg0_h  #f9f5d7;
+@define-color bg0    #fbf1c7;
+@define-color bg1    #ebdbb2;
+@define-color bg2    #d5c4a1;
+@define-color bg3    #bdae93;
+@define-color bg4    #a89984;
+@define-color fg0    #282828;
+@define-color fg1    #3c3836;
+@define-color fg2    #504945;
+@define-color fg3    #665c54;
+@define-color fg4    #7c6f64;
+@define-color red    #cc241d;
+@define-color green  #98971a;
+@define-color yellow #d79921;
+@define-color blue   #458588;
+@define-color purple #b16286;
+@define-color aqua   #689d6a;
+@define-color orange #d65d0e;
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free", monospace;
+    font-size: 13px;
+    font-weight: 600;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: @bg0;
+    color: @fg1;
+    border-bottom: 1px solid @bg2;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#workspaces button {
+    padding: 0 6px;
+    background-color: transparent;
+    color: @fg2;
+    border-bottom: 2px solid transparent;
+}
+
+#workspaces button:hover {
+    background: @bg1;
+    box-shadow: inherit;
+    border-bottom: 2px solid @fg4;
+}
+
+#workspaces button.active {
+    background-color: @bg1;
+    color: @fg0;
+    border-bottom: 2px solid @blue;
+}
+
+#workspaces button.urgent {
+    background-color: @red;
+    color: @bg0;
+}
+
+#window,
+#clock,
+#network,
+#pulseaudio,
+#tray,
+#idle_inhibitor,
+#custom-power {
+    padding: 0 10px;
+    color: @fg1;
+}
+
+#window {
+    color: @fg2;
+}
+
+#clock {
+    color: @blue;
+}
+
+#network {
+    color: @aqua;
+}
+
+#network.disconnected {
+    color: @red;
+}
+
+#pulseaudio {
+    color: @orange;
+}
+
+#pulseaudio.muted {
+    color: @fg4;
+}
+
+#idle_inhibitor {
+    color: @purple;
+}
+
+#idle_inhibitor.activated {
+    color: @yellow;
+}
+
+#custom-power {
+    color: @red;
+    padding-right: 14px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @red;
+}
+
+tooltip {
+    background: @bg0_h;
+    border: 1px solid @bg3;
+    color: @fg1;
+}

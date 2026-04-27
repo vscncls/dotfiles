@@ -1,0 +1,7 @@
+# Editor / OS noise
+*.swp
+*.swo
+.DS_Store
+
+# Shell histories that shouldn't be tracked
+fish/.config/fish/fish_history
