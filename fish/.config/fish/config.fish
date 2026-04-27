@@ -13,4 +13,5 @@ if status is-interactive
     abbr gb git branch
     abbr gp git push
     abbr ga git add
+    alias tree='eza --tree --git-ignore --icons'
 end
